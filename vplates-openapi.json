@@ -1,0 +1,32 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Vplates API", "version": "1.0.0" },
+  "servers": [{ "url": "https://vplates.com.au/vplatesapi" }],
+  "paths": {
+    "/checkcombo": {
+      "get": {
+        "parameters": [
+          { "name": "vehicleType", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "combination", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Check combo result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "available": { "type": "boolean" },
+                    "message": { "type": "string" }
+                  },
+                  "required": ["available", "message"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
