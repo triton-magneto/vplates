@@ -1,7 +1,13 @@
 {
   "openapi": "3.0.0",
-  "info": { "title": "Vplates API", "version": "1.0.0" },
-  "servers": [{ "url": "https://vplates.com.au/vplatesapi" }],
+  "info": {
+    "title": "Vplates API",
+    "version": "1.0.0",
+    "description": "Check custom plate availability"
+  },
+  "servers": [
+    { "url": "https://vplates.com.au/vplatesapi" }
+  ],
   "paths": {
     "/checkcombo": {
       "get": {
@@ -11,7 +17,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Check combo result",
+            "description": "Plate availability result",
             "content": {
               "application/json": {
                 "schema": {
